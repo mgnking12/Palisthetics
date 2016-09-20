@@ -1,0 +1,32 @@
+.navbar-default .navbar-brand {
+    font-family: Exo;
+    font-weight: 600;
+    color: #F98100 !important;
+    font-size: 40px;
+}
+
+.navbar {
+    background-color: #F1FFE2 !important;
+}
+
+.navbar-right li {
+    background-color: #FADEC0 !important;
+    margin: 0 5px;
+    font-weight: 500;
+}
+
+.blue {
+    color: #065278 !important;
+}
+
+.h2blue {
+    color: #0094A3 !important;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: #065278 !important;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+}

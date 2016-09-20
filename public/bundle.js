@@ -25453,11 +25453,11 @@
 	"use strict";
 
 	// Include React 
+
 	var React = __webpack_require__(1);
 
 	var Main = React.createClass({
 	  displayName: "Main",
-
 
 	  // Here we render the function
 	  render: function render() {
@@ -25504,6 +25504,15 @@
 	                React.createElement(
 	                  "a",
 	                  { href: "#/Child1", className: "blue" },
+	                  "Link"
+	                )
+	              ),
+	              React.createElement(
+	                "li",
+	                null,
+	                React.createElement(
+	                  "a",
+	                  { href: "#/Child2", className: "blue" },
 	                  "Link"
 	                )
 	              ),
@@ -25568,60 +25577,11 @@
 	        React.createElement(
 	          "div",
 	          { className: "col-md-12" },
+	          React.createElement("p", null),
 	          React.createElement(
 	            "div",
 	            { className: "row" },
-	            React.createElement(
-	              "div",
-	              { className: "col-md-3 col-md-offset-3" },
-	              React.createElement(
-	                "h2",
-	                { className: "h2blue text-center" },
-	                "I'm looking for..."
-	              ),
-	              React.createElement(
-	                "div",
-	                { className: "row" },
-	                React.createElement(
-	                  "div",
-	                  { className: "col-xs-2 col-xs-offset-2" },
-	                  React.createElement("div", { className: "circle" })
-	                ),
-	                React.createElement(
-	                  "div",
-	                  { className: "col-xs-2 col-xs-offset-2" },
-	                  React.createElement("div", { className: "circle" })
-	                )
-	              ),
-	              React.createElement(
-	                "div",
-	                { className: "row" },
-	                React.createElement(
-	                  "div",
-	                  { className: "col-xs-2 col-xs-offset-2 " },
-	                  React.createElement("div", { className: "circle" })
-	                ),
-	                React.createElement(
-	                  "div",
-	                  { className: "col-xs-2 col-xs-offset-2 " },
-	                  React.createElement("div", { className: "circle" })
-	                )
-	              ),
-	              React.createElement(
-	                "div",
-	                { className: "row" },
-	                React.createElement(
-	                  "div",
-	                  { className: "col-xs-2 col-xs-offset-2" },
-	                  React.createElement("div", { className: "circle" })
-	                ),
-	                React.createElement(
-	                  "div",
-	                  { className: "col-xs-2 col-xs-offset-2" },
-	                  React.createElement("div", { className: "circle" })
-	                )
-	              )
-	            )
+	            this.props.children
 	          )
 	        )
 	      )
@@ -25649,48 +25609,55 @@
 
 			return React.createElement(
 				"div",
-				{ className: "container" },
+				{ className: "row" },
 				React.createElement(
 					"div",
-					{ className: "col-lg-12" },
+					{ className: "col-md-3 col-md-offset-3" },
+					React.createElement(
+						"h2",
+						{ className: "h2blue text-center" },
+						"I'm looking for..."
+					),
 					React.createElement(
 						"div",
-						{ className: "panel panel-primary" },
+						{ className: "row" },
 						React.createElement(
 							"div",
-							{ className: "panel-heading" },
-							React.createElement(
-								"h3",
-								{ className: "panel-title" },
-								"Child #1"
-							)
+							{ className: "col-xs-2 col-xs-offset-2" },
+							React.createElement("div", { className: "circle" })
 						),
 						React.createElement(
 							"div",
-							{ className: "panel-body" },
-							React.createElement(
-								"p",
-								null,
-								React.createElement(
-									"a",
-									{ href: "#/Child1/GrandChild1" },
-									React.createElement(
-										"button",
-										{ className: "btn btn-warning btn-sm" },
-										"Show Grandchild #1>"
-									)
-								),
-								React.createElement(
-									"a",
-									{ href: "#/Child1/GrandChild2" },
-									React.createElement(
-										"button",
-										{ className: "btn btn-success btn-sm" },
-										"Show Grandchild #2>"
-									)
-								)
-							),
-							this.props.children
+							{ className: "col-xs-2 col-xs-offset-2" },
+							React.createElement("div", { className: "circle" })
+						)
+					),
+					React.createElement(
+						"div",
+						{ className: "row" },
+						React.createElement(
+							"div",
+							{ className: "col-xs-2 col-xs-offset-2 " },
+							React.createElement("div", { className: "circle" })
+						),
+						React.createElement(
+							"div",
+							{ className: "col-xs-2 col-xs-offset-2 " },
+							React.createElement("div", { className: "circle" })
+						)
+					),
+					React.createElement(
+						"div",
+						{ className: "row" },
+						React.createElement(
+							"div",
+							{ className: "col-xs-2 col-xs-offset-2" },
+							React.createElement("div", { className: "circle" })
+						),
+						React.createElement(
+							"div",
+							{ className: "col-xs-2 col-xs-offset-2" },
+							React.createElement("div", { className: "circle" })
 						)
 					)
 				)

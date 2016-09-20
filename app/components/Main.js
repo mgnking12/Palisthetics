@@ -1,4 +1,5 @@
 // Include React 
+
 var React = require('react');
 
 var Main = React.createClass({
@@ -26,6 +27,7 @@ var Main = React.createClass({
     
       <ul className="nav navbar-nav navbar-right">
         <li><a href="#/Child1" className="blue">Link</a></li>
+        <li><a href="#/Child2" className="blue">Link</a></li>
         <li className="dropdown">
           <a href="#" className="dropdown-toggle blue" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
           <ul className="dropdown-menu">
@@ -42,25 +44,20 @@ var Main = React.createClass({
 </nav>
 <div className="row">
 <div className="col-md-12">
-	<div className="row">
-			<div className="col-md-3 col-md-offset-3">
-					<h2 className="h2blue text-center">I'm looking for...</h2>
-					<div className="row">
-					<div className="col-xs-2 col-xs-offset-2"><div className="circle"></div></div>
-					<div className="col-xs-2 col-xs-offset-2"><div className="circle"></div></div>
-					</div>
-          <div className="row">
-					<div className="col-xs-2 col-xs-offset-2 "><div className="circle"></div></div>
-					<div className="col-xs-2 col-xs-offset-2 "><div className="circle"></div></div>
-					</div>
-          <div className="row">
-					<div className="col-xs-2 col-xs-offset-2"><div className="circle"></div></div>
-					<div className="col-xs-2 col-xs-offset-2"><div className="circle"></div></div>
-					</div>
-			</div>
 
+
+					<p>
+					
+					</p>
+			
+
+				<div className="row">
+					
+					{/*This code will dump the correct Child Component*/}
+					{this.props.children}
+
+				</div>
 	</div>
-			</div>
 			</div>
 			</div>
 		)

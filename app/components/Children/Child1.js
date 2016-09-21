@@ -1,11 +1,15 @@
 // Include React
 var React = require('react');
 
+var Nav = require('../Nav');
+
 var Child1 = React.createClass({
 
 	render: function(){
 
 		return(
+			<div>
+			<Nav />
 				<div className="row">
 			<div className="col-md-3 col-md-offset-3">
 					<h2 className="h2blue text-center">I'm looking for...</h2>
@@ -23,6 +27,7 @@ var Child1 = React.createClass({
 					</div>
 			</div>
       </div>
+	  </div>
 		)
 	}
 });

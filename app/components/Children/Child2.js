@@ -1,11 +1,14 @@
-// Include React
 var React = require('react');
+
+var Nav = require('../Nav');
 
 var Child2 = React.createClass({
 
 	render: function(){
 
 		return(
+			<div>
+			<Nav />
 			<div className="container">
 
 				<div className="col-lg-12">
@@ -19,6 +22,7 @@ var Child2 = React.createClass({
 					</div>
 				</div>
 
+			</div>
 			</div>
 		)
 	}

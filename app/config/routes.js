@@ -11,6 +11,7 @@ var IndexRoute	= Router.IndexRoute;
 // Reference the high-level components
 var Main = require('../components/Main');
 var Child1 = require('../components/Children/Child1'); 
+var SignIn = require('../components/Children/SignIn'); 
 var Child2 = require('../components/Children/Child2'); 
 var GrandChild1 = require('../components/Children/Grandchildren/GrandChild1');
 var GrandChild2 = require('../components/Children/Grandchildren/GrandChild2');
@@ -20,7 +21,10 @@ module.exports = (
 
 	/*High level component is the Main component*/
 	<Route path='/' component={Main}>
+	<Route path='SignIn' component={SignIn} >
 
+		</Route>
+		
 		{/* If user selects Child1 then show the appropriate component*/}
 		<Route path='Child1' component={Child1} >
 
@@ -36,9 +40,10 @@ module.exports = (
 		<Route path='Child2' component={Child2} />
 
 		{/*If user selects any other path... we get the Home Route*/}
-		<IndexRoute component={Child1} />
+		<IndexRoute component={SignIn} />
 		
 	</Route>
+
 
 
 );

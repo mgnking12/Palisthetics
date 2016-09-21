@@ -25427,14 +25427,16 @@
 	// Reference the high-level components
 	var Main = __webpack_require__(223);
 	var Child1 = __webpack_require__(224);
-	var Child2 = __webpack_require__(225);
-	var GrandChild1 = __webpack_require__(226);
-	var GrandChild2 = __webpack_require__(227);
+	var SignIn = __webpack_require__(226);
+	var Child2 = __webpack_require__(227);
+	var GrandChild1 = __webpack_require__(228);
+	var GrandChild2 = __webpack_require__(229);
 
 	// Export the Routes
 	module.exports = React.createElement(
 		Route,
 		{ path: '/', component: Main },
+		React.createElement(Route, { path: 'SignIn', component: SignIn }),
 		React.createElement(
 			Route,
 			{ path: 'Child1', component: Child1 },
@@ -25443,7 +25445,7 @@
 			React.createElement(IndexRoute, { component: GrandChild1 })
 		),
 		React.createElement(Route, { path: 'Child2', component: Child2 }),
-		React.createElement(IndexRoute, { component: Child1 })
+		React.createElement(IndexRoute, { component: SignIn })
 	);
 
 /***/ },
@@ -25457,136 +25459,17 @@
 	var React = __webpack_require__(1);
 
 	var Main = React.createClass({
-	  displayName: "Main",
+		displayName: "Main",
 
-	  // Here we render the function
-	  render: function render() {
+		// Here we render the function
+		render: function render() {
 
-	    return React.createElement(
-	      "div",
-	      { className: "fluid-container" },
-	      React.createElement(
-	        "nav",
-	        { className: "navbar navbar-default" },
-	        React.createElement(
-	          "div",
-	          { className: "container-fluid" },
-	          React.createElement(
-	            "div",
-	            { className: "navbar-header" },
-	            React.createElement(
-	              "button",
-	              { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1", "aria-expanded": "false" },
-	              React.createElement(
-	                "span",
-	                { className: "sr-only" },
-	                "Toggle navigation"
-	              ),
-	              React.createElement("span", { className: "icon-bar" }),
-	              React.createElement("span", { className: "icon-bar" }),
-	              React.createElement("span", { className: "icon-bar" })
-	            ),
-	            React.createElement(
-	              "a",
-	              { className: "navbar-brand orange", href: "#" },
-	              "Palisthenics"
-	            )
-	          ),
-	          React.createElement(
-	            "div",
-	            { className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
-	            React.createElement(
-	              "ul",
-	              { className: "nav navbar-nav navbar-right" },
-	              React.createElement(
-	                "li",
-	                null,
-	                React.createElement(
-	                  "a",
-	                  { href: "#/Child1", className: "blue" },
-	                  "Link"
-	                )
-	              ),
-	              React.createElement(
-	                "li",
-	                null,
-	                React.createElement(
-	                  "a",
-	                  { href: "#/Child2", className: "blue" },
-	                  "Link"
-	                )
-	              ),
-	              React.createElement(
-	                "li",
-	                { className: "dropdown" },
-	                React.createElement(
-	                  "a",
-	                  { href: "#", className: "dropdown-toggle blue", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
-	                  "Dropdown ",
-	                  React.createElement("span", { className: "caret" })
-	                ),
-	                React.createElement(
-	                  "ul",
-	                  { className: "dropdown-menu" },
-	                  React.createElement(
-	                    "li",
-	                    null,
-	                    React.createElement(
-	                      "a",
-	                      { href: "#" },
-	                      "Action"
-	                    )
-	                  ),
-	                  React.createElement(
-	                    "li",
-	                    null,
-	                    React.createElement(
-	                      "a",
-	                      { href: "#" },
-	                      "Another action"
-	                    )
-	                  ),
-	                  React.createElement(
-	                    "li",
-	                    null,
-	                    React.createElement(
-	                      "a",
-	                      { href: "#" },
-	                      "Something else here"
-	                    )
-	                  ),
-	                  React.createElement("li", { role: "separator", className: "divider" }),
-	                  React.createElement(
-	                    "li",
-	                    null,
-	                    React.createElement(
-	                      "a",
-	                      { href: "#" },
-	                      "Separated link"
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        )
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: "row" },
-	        React.createElement(
-	          "div",
-	          { className: "col-md-12" },
-	          React.createElement("p", null),
-	          React.createElement(
-	            "div",
-	            { className: "row" },
-	            this.props.children
-	          )
-	        )
-	      )
-	    );
-	  }
+			return React.createElement(
+				"div",
+				{ className: "fluid-container" },
+				this.props.children
+			);
+		}
 	});
 
 	// Export the componen back for use in other files
@@ -25596,68 +25479,75 @@
 /* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	// Include React
 	var React = __webpack_require__(1);
 
+	var Nav = __webpack_require__(225);
+
 	var Child1 = React.createClass({
-		displayName: "Child1",
+		displayName: 'Child1',
 
 
 		render: function render() {
 
 			return React.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				null,
+				React.createElement(Nav, null),
 				React.createElement(
-					"div",
-					{ className: "col-md-3 col-md-offset-3" },
+					'div',
+					{ className: 'row' },
 					React.createElement(
-						"h2",
-						{ className: "h2blue text-center" },
-						"I'm looking for..."
-					),
-					React.createElement(
-						"div",
-						{ className: "row" },
+						'div',
+						{ className: 'col-md-3 col-md-offset-3' },
 						React.createElement(
-							"div",
-							{ className: "col-xs-2 col-xs-offset-2" },
-							React.createElement("div", { className: "circle" })
+							'h2',
+							{ className: 'h2blue text-center' },
+							'I\'m looking for...'
 						),
 						React.createElement(
-							"div",
-							{ className: "col-xs-2 col-xs-offset-2" },
-							React.createElement("div", { className: "circle" })
-						)
-					),
-					React.createElement(
-						"div",
-						{ className: "row" },
-						React.createElement(
-							"div",
-							{ className: "col-xs-2 col-xs-offset-2 " },
-							React.createElement("div", { className: "circle" })
+							'div',
+							{ className: 'row' },
+							React.createElement(
+								'div',
+								{ className: 'col-xs-2 col-xs-offset-2' },
+								React.createElement('div', { className: 'circle' })
+							),
+							React.createElement(
+								'div',
+								{ className: 'col-xs-2 col-xs-offset-2' },
+								React.createElement('div', { className: 'circle' })
+							)
 						),
 						React.createElement(
-							"div",
-							{ className: "col-xs-2 col-xs-offset-2 " },
-							React.createElement("div", { className: "circle" })
-						)
-					),
-					React.createElement(
-						"div",
-						{ className: "row" },
-						React.createElement(
-							"div",
-							{ className: "col-xs-2 col-xs-offset-2" },
-							React.createElement("div", { className: "circle" })
+							'div',
+							{ className: 'row' },
+							React.createElement(
+								'div',
+								{ className: 'col-xs-2 col-xs-offset-2 ' },
+								React.createElement('div', { className: 'circle' })
+							),
+							React.createElement(
+								'div',
+								{ className: 'col-xs-2 col-xs-offset-2 ' },
+								React.createElement('div', { className: 'circle' })
+							)
 						),
 						React.createElement(
-							"div",
-							{ className: "col-xs-2 col-xs-offset-2" },
-							React.createElement("div", { className: "circle" })
+							'div',
+							{ className: 'row' },
+							React.createElement(
+								'div',
+								{ className: 'col-xs-2 col-xs-offset-2' },
+								React.createElement('div', { className: 'circle' })
+							),
+							React.createElement(
+								'div',
+								{ className: 'col-xs-2 col-xs-offset-2' },
+								React.createElement('div', { className: 'circle' })
+							)
 						)
 					)
 				)
@@ -25673,37 +25563,242 @@
 
 	"use strict";
 
+	var React = __webpack_require__(1);
+
+	var Nav = React.createClass({
+	  displayName: "Nav",
+
+
+	  // Here we render the function
+	  render: function render() {
+
+	    return React.createElement(
+	      "nav",
+	      { className: "navbar navbar-default" },
+	      React.createElement(
+	        "div",
+	        { className: "container-fluid" },
+	        React.createElement(
+	          "div",
+	          { className: "navbar-header" },
+	          React.createElement(
+	            "button",
+	            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1", "aria-expanded": "false" },
+	            React.createElement(
+	              "span",
+	              { className: "sr-only" },
+	              "Toggle navigation"
+	            ),
+	            React.createElement("span", { className: "icon-bar" }),
+	            React.createElement("span", { className: "icon-bar" }),
+	            React.createElement("span", { className: "icon-bar" })
+	          ),
+	          React.createElement(
+	            "a",
+	            { className: "navbar-brand orange", href: "#" },
+	            "Palisthenics"
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
+	          React.createElement(
+	            "ul",
+	            { className: "nav navbar-nav navbar-right" },
+	            React.createElement(
+	              "li",
+	              null,
+	              React.createElement(
+	                "a",
+	                { href: "#/Child1", className: "blue" },
+	                "Link"
+	              )
+	            ),
+	            React.createElement(
+	              "li",
+	              null,
+	              React.createElement(
+	                "a",
+	                { href: "#/Child2", className: "blue" },
+	                "Link"
+	              )
+	            ),
+	            React.createElement(
+	              "li",
+	              { className: "dropdown" },
+	              React.createElement(
+	                "a",
+	                { href: "#", className: "dropdown-toggle blue", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
+	                "Dropdown ",
+	                React.createElement("span", { className: "caret" })
+	              ),
+	              React.createElement(
+	                "ul",
+	                { className: "dropdown-menu" },
+	                React.createElement(
+	                  "li",
+	                  null,
+	                  React.createElement(
+	                    "a",
+	                    { href: "#" },
+	                    "Action"
+	                  )
+	                ),
+	                React.createElement(
+	                  "li",
+	                  null,
+	                  React.createElement(
+	                    "a",
+	                    { href: "#" },
+	                    "Another action"
+	                  )
+	                ),
+	                React.createElement(
+	                  "li",
+	                  null,
+	                  React.createElement(
+	                    "a",
+	                    { href: "#" },
+	                    "Something else here"
+	                  )
+	                ),
+	                React.createElement("li", { role: "separator", className: "divider" }),
+	                React.createElement(
+	                  "li",
+	                  null,
+	                  React.createElement(
+	                    "a",
+	                    { href: "#/SignIn" },
+	                    "Sign Out"
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	// Export the componen back for use in other files
+	module.exports = Nav;
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	// Include React
 	var React = __webpack_require__(1);
 
+	var signinBrand = {
+	    fontFamily: 'Exo',
+	    fontWeight: 600,
+	    color: '#F98100',
+	    fontSize: 40
+	};
+
+	var input = {
+	    backgroundColor: '#F1FFE2',
+	    marginBottom: 5
+	};
+
 	var Child2 = React.createClass({
-		displayName: "Child2",
+	    displayName: 'Child2',
+
+
+	    render: function render() {
+
+	        return React.createElement(
+	            'div',
+	            null,
+	            React.createElement(
+	                'form',
+	                { className: 'form-signin col-md-2 col-md-offset-5' },
+	                React.createElement(
+	                    'h2',
+	                    { style: signinBrand },
+	                    'Palisthenics'
+	                ),
+	                React.createElement(
+	                    'label',
+	                    { 'for': 'inputEmail', className: 'sr-only' },
+	                    'Email address'
+	                ),
+	                React.createElement('input', { style: input, type: 'email', id: 'inputEmail', className: 'form-control', placeholder: 'Email address', required: '', autofocus: '' }),
+	                React.createElement(
+	                    'label',
+	                    { 'for': 'inputPassword', className: 'sr-only' },
+	                    'Password'
+	                ),
+	                React.createElement('input', { style: input, type: 'password', id: 'inputPassword', className: 'form-control', placeholder: 'Password', required: '' }),
+	                React.createElement(
+	                    'div',
+	                    { className: 'checkbox' },
+	                    React.createElement(
+	                        'label',
+	                        null,
+	                        React.createElement('input', { type: 'checkbox', value: 'remember-me' }),
+	                        ' Remember me'
+	                    )
+	                ),
+	                React.createElement(
+	                    'a',
+	                    { href: '#/Child1', className: 'btn btn-lg btn-primary btn-block' },
+	                    'Sign in'
+	                )
+	            )
+	        );
+	    }
+	});
+
+	module.exports = Child2;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Nav = __webpack_require__(225);
+
+	var Child2 = React.createClass({
+		displayName: 'Child2',
 
 
 		render: function render() {
 
 			return React.createElement(
-				"div",
-				{ className: "container" },
+				'div',
+				null,
+				React.createElement(Nav, null),
 				React.createElement(
-					"div",
-					{ className: "col-lg-12" },
+					'div',
+					{ className: 'container' },
 					React.createElement(
-						"div",
-						{ className: "panel panel-danger" },
+						'div',
+						{ className: 'col-lg-12' },
 						React.createElement(
-							"div",
-							{ className: "panel-heading" },
+							'div',
+							{ className: 'panel panel-danger' },
 							React.createElement(
-								"h3",
-								{ className: "panel-title" },
-								"Child #2"
+								'div',
+								{ className: 'panel-heading' },
+								React.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Child #2'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'panel-body' },
+								'Panel content'
 							)
-						),
-						React.createElement(
-							"div",
-							{ className: "panel-body" },
-							"Panel content"
 						)
 					)
 				)
@@ -25714,7 +25809,7 @@
 	module.exports = Child2;
 
 /***/ },
-/* 226 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25751,7 +25846,7 @@
 	module.exports = GrandChild1;
 
 /***/ },
-/* 227 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

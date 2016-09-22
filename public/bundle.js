@@ -25766,6 +25766,40 @@
 
 	var Nav = __webpack_require__(225);
 
+	var crclBlue = {
+		backgroundColor: '#9BF0F2',
+		height: 50,
+		width: 50,
+		borderRadius: '50%',
+		marginBottom: -60,
+		left: 60,
+		marginTop: 30,
+		color: '#fff',
+		position: 'relative',
+		zIndex: 1000,
+		fontSize: 30
+	};
+
+	var crclRed = {
+		backgroundColor: '#F57777',
+		height: 50,
+		width: 50,
+		borderRadius: '50%',
+		marginBottom: -80,
+		left: 110,
+		marginTop: 30,
+		color: '#fff',
+		position: 'relative',
+		zIndex: 1000,
+		fontSize: 30
+	};
+	var flex = {
+		display: flex
+	};
+	var crclImg = {
+		flex: 0
+	};
+
 	var Child2 = React.createClass({
 		displayName: 'Child2',
 
@@ -25778,29 +25812,32 @@
 				React.createElement(Nav, null),
 				React.createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'text-center' },
 					React.createElement(
-						'div',
-						{ className: 'col-lg-12' },
-						React.createElement(
-							'div',
-							{ className: 'panel panel-danger' },
-							React.createElement(
-								'div',
-								{ className: 'panel-heading' },
-								React.createElement(
-									'h3',
-									{ className: 'panel-title' },
-									'Child #2'
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'panel-body' },
-								'Panel content'
-							)
-						)
+						'h2',
+						null,
+						'Name'
+					),
+					React.createElement(
+						'p',
+						null,
+						'Gender, Age'
 					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'container', style: flex },
+					React.createElement(
+						'a',
+						{ style: crclBlue, className: 'center-block text-center' },
+						'X'
+					),
+					React.createElement(
+						'a',
+						{ style: crclRed, className: 'center-block text-center' },
+						'X'
+					),
+					React.createElement('img', { src: 'http://placehold.it/300x300', className: 'center-block img-circle img-responsive', style: crclImg })
 				)
 			);
 		}

@@ -21,8 +21,8 @@ var Card = React.createClass({
             card = ReactDOM.findDOMNode(this),
 
             initialPosition = {
-                x: Math.round((screen.offsetWidth - card.offsetWidth) / 2),
-                y: Math.round((screen.offsetHeight - card.offsetHeight) / 2)
+                x: 0,
+                y: 0
             };
 
         this.setState({
@@ -90,12 +90,12 @@ var DraggableCard = React.createClass({
     },
 
     resetPosition: function() {
-        var screen = document.getElementById('master-root'),
+        var screen = document.getElementById('app'),
             card = ReactDOM.findDOMNode(this);
 
         var initialPosition = {
-            x: Math.round((screen.offsetWidth - card.offsetWidth) / 2),
-            y: Math.round((screen.offsetHeight - card.offsetHeight) / 2)
+            x: Math.round((0 - 0) / 2),
+            y: Math.round((0 - 0) / 2)
         };
 
         var initialState = this.getInitialState();
@@ -118,12 +118,12 @@ var DraggableCard = React.createClass({
             });
         },
         panend: function(ev) {
-            var screen = document.getElementById('master-root'),
+            var screen = document.getElementById('app'),
                 card = ReactDOM.findDOMNode(this);
 
             if (this.state.x < -50) {
                 this.props.onOutScreenLeft(this.props.cardId);
-            } else if ((this.state.x + (card.offsetWidth - 50)) > screen.offsetWidth) {
+            } else if ((this.state.x + (0 - 50)) > 0) {
                 this.props.onOutScreenRight(this.props.cardId);
             } else {
                 this.resetPosition();
